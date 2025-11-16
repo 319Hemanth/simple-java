@@ -1,12 +1,17 @@
 # stable official Java runtime base image
 #FROM openjdk:17-jdk-slim
-FROM openjdk:17
 
 # metadata
-LABEL maintainer="your-email@example.com"
-LABEL version="1.0"
-LABEL description="A simple Java application"
+#LABEL maintainer="your-email@example.com"
+#LABEL version="1.0"
+#LABEL description="A simple Java application"
 
+FROM ubuntu:latest
+
+RUN apt-get update && \
+    apt-get install -y openjdk-17-jdk && \
+    apt-get clean
+    
 # working directory
 WORKDIR /app
 
