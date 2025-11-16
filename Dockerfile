@@ -1,6 +1,6 @@
 # stable official Java runtime base image
 #FROM openjdk:17-jdk-slim
-FROM Ubuntu
+FROM ubuntu
 # metadata
 LABEL maintainer="your-email@example.com"
 LABEL version="1.0"
