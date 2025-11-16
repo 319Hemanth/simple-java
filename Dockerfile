@@ -6,7 +6,8 @@
 #LABEL version="1.0"
 #LABEL description="A simple Java application"
 
-FROM ubuntu:latest
+#FROM ubuntu:latest
+FROM openjdk:17-jdk-slim
 
 RUN apt-get update && \
     apt-get install -y openjdk-17-jdk && \
