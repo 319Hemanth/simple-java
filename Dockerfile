@@ -7,8 +7,8 @@
 #LABEL description="A simple Java application"
 
 #FROM ubuntu:latest
-FROM openjdk:17-slim
-
+#FROM openjdk:17-slim
+FROM eclipse-temurin:17-jdk
 RUN apt-get update && \
     apt-get install -y openjdk-17-jdk && \
     apt-get clean
