@@ -20,10 +20,8 @@ spec:
         ports:
         - containerPort: 8080
       imagePullSecrets:
-      - name: nexus-registry-secret  # Required if your Nexus needs authentication
-
+      - name: nexus-registry-secret
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -34,6 +32,6 @@ spec:
   type: NodePort
   ports:
     - protocol: TCP
-      port: 80        # Service port
-      targetPort: 8080 # Container port
-      nodePort: 30080  # Optional: fixed NodePort for single-node cluster
+      port: 80
+      targetPort: 8080
+      nodePort: 30080
