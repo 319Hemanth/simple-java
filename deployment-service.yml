@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-java-deployment
+  labels:
+    app: simple-java
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: simple-java
+  template:
+    metadata:
+      labels:
+        app: simple-java
+    spec:
+      containers:
+      - name: simple-java
+        image: 172.26.90.86:8083/simple-java-img:latest
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: nexus-registry-secret  # Required if your Nexus needs authentication
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple-java-service
+spec:
+  selector:
+    app: simple-java
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80        # Service port
+      targetPort: 8080 # Container port
+      nodePort: 30080  # Optional: fixed NodePort for single-node cluster
+
