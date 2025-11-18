@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: simple-java
-        image: 172.26.90.86:8083/docker-hosted/simple-java-img-1:latest
+        image: http://localhost:8081/#browse/browse:docker-hosted:v2%2Fsimple-java-img-1
         ports:
         - containerPort: 8080
       imagePullSecrets:
