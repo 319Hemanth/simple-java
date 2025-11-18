@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: simple-java
-        image: 172.26.90.86:8083/simple-java-img-1:latest
+        image: 172.26.90.86:8083/v2/simple-java-img-1:latest
         ports:
         - containerPort: 8080
       imagePullSecrets:
